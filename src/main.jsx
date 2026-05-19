@@ -13,7 +13,7 @@ import Login from './Login.jsx';
 import Database from './Database.jsx';
 import TodayPatientDetails from './TodayPatientDetails.jsx';
 import { Analytics } from '@vercel/analytics/react';
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 const Routes = createBrowserRouter(
   [
