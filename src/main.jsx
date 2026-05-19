@@ -13,6 +13,7 @@ import Login from './Login.jsx';
 import Database from './Database.jsx';
 import TodayPatientDetails from './TodayPatientDetails.jsx';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const Routes = createBrowserRouter(
   [
@@ -66,5 +67,6 @@ createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={Routes}/>
     <Analytics/>
+    <SpeedInsights/>
   </StrictMode>,
 )
