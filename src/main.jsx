@@ -1,0 +1,67 @@
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Home from './Home.jsx';
+import NewPatient from './NewPatient.jsx';
+import Reports from './Reports.jsx';
+import EmergencyPatient from './EmergencyPatient.jsx';
+import BookAppoinment from './BookAppoinment.jsx';
+import Profile from './Profile.jsx';
+import Settings from './Settings.jsx';
+import Help from './Help.jsx';
+import Login from './Login.jsx';
+import Database from './Database.jsx';
+import TodayPatientDetails from './TodayPatientDetails.jsx';
+const Routes = createBrowserRouter(
+  [
+    {
+      path:'/',
+      element:<Home/>
+    },
+    {
+      path:'/new-patient',
+      element:<NewPatient/>
+    },
+    {
+      path:'/reports',
+      element:<Reports/>
+    },
+    {
+      path:'/emergency-patient',
+      element:<EmergencyPatient/>
+    },
+    {
+      path:'/book-appointment',
+      element:<BookAppoinment/>
+    },
+    {
+      path:'/profile',
+      element:<Profile/>
+    },
+    {
+      path:'/settings',
+      element:<Settings/>
+    },
+    {
+      path:'/help',
+      element:<Help/>
+    },
+    {
+      path:'/login',
+      element:<Login/>
+    },
+    {
+      path:'/database',
+      element:<Database/>
+    },
+    {
+      path:'/today-patients-details',
+      element:<TodayPatientDetails/>
+    }
+  ]
+)
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <RouterProvider router={Routes}/>
+  </StrictMode>,
+)

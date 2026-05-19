@@ -1,0 +1,95 @@
+
+#login-section{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+.animation{
+  width: 50%;
+  height: 100vh;
+  background-color: white;
+}
+.form{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form form{
+  width: 70%;
+  height: 500px;
+  margin-top: 15%;
+}
+.form form label{
+  display: block;
+  font-size: 30px;
+  color: white;
+  margin:25px 0px 0px 0px;
+}
+.form form input{
+  width: 88%;
+  display: block;
+  font-size: 25px;
+  padding: 1%;
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid black;
+}
+.form form input::placeholder{
+  color: black;
+  opacity: 0.9;
+}
+.form form button{
+  display: block;
+  width: 90%;
+  height: 50px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background-color: white;
+  font-size: 19px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 25px;
+}
+.form form button:hover{
+  box-shadow: 0px 0px 5px 2px #ed008c;
+}
+.logo-animation-logo{
+  text-align: center;
+}
+.logo-animation-logo figure img{
+  width: 150px;
+}
+.logo-animation-logo h2{
+  font-size: 30px;
+  margin-top: -60px;
+}
+/* now the responsive section is starting */
+
+@media screen and (max-width: 1024px) {
+
+}
+@media screen and (max-width: 768px) {
+  #login-section{
+    flex-direction: column;
+  }
+  #login-section .animation{
+    background-color: white;
+    width: 100%;
+    height: 30%;
+  }
+  .animation h2{
+    margin-top: 0px;
+  }
+  .form{
+    height: auto;
+  }
+  .form form{
+    height: 90%;
+  }
+}
+@media screen and (max-width: 480px) {
+
+}

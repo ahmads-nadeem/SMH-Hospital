@@ -1,0 +1,38 @@
+
+.headingh2-div{
+  display: flex;
+  justify-content: center;
+}
+.h2headings{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  width: 350px;
+  height: 60px;
+  font-size: 29px;
+  background-color: white;
+}
+.table-10{
+  background-color: white;
+  width: 95%;
+  height: 70vh;
+  margin:30px auto;
+  border-radius: 10px;
+  position: relative;
+  z-index: -1;
+}
+#morebuttontoday{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #6d64c5;
+  color: white;
+  font-weight: 600;
+  width: 80px;
+  height: 50px;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}

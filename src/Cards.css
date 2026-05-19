@@ -1,0 +1,113 @@
+
+#homelinks{
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  width: 95%;
+  height: auto;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.section1 {
+  width: 100%;
+  height: auto;
+  margin: 40px 0px;
+}
+.xcard {
+  width: 47%;
+  height: 310px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 10px;
+}
+.heading {
+  padding: 10px;
+  border-bottom: 2px solid rgb(206, 202, 202);
+}
+.overview {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.databox {
+  background-color: rgb(236, 229, 229);
+  border: 1px solid transparent;
+  border-radius: 10px;
+  /* width: 47%; */
+  flex-basis: 47%;
+  height: 100px;
+  text-align: center;
+  margin: 5px 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.databox h3 {
+  color: #6d64c5;
+  font-weight: 700;
+  font-size: 28px;
+}
+.databox p {
+  color: rgb(118, 115, 115);
+}
+.actions{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.actions button {
+  flex-basis: 46%;
+  height: 60px;
+  background: linear-gradient(135deg, #3f3fcf 0%, #d135d1 100%);
+  border: 1px solid transparent;
+  margin: 15px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+}
+.actions button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+/* now the responsive section is starting */
+
+@media screen and (max-width: 1200px) {
+  .actions button{
+    flex-basis: 43%;
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .actions button{
+    flex-basis: 43%;
+    font-size: 16px;
+  }
+  .overview{
+    padding: 8px 1px 2px 1px;
+  }
+  .databox{
+    flex-basis: 45%;
+  }
+
+}
+@media screen and (max-width: 768px) {
+  .actions button{
+    flex-basis: 95%;
+  }
+  .xcard{
+    flex-basis: 100%;
+    margin-bottom: 10px;
+    height: auto;
+  }
+}
+/* @media screen and (max-width: 480px) {
+
+} */
