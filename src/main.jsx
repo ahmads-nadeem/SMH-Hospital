@@ -12,6 +12,8 @@ import Help from './Help.jsx';
 import Login from './Login.jsx';
 import Database from './Database.jsx';
 import TodayPatientDetails from './TodayPatientDetails.jsx';
+import { Analytics } from '@vercel/analytics/react';
+
 const Routes = createBrowserRouter(
   [
     {
@@ -63,5 +65,6 @@ const Routes = createBrowserRouter(
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={Routes}/>
+    <Analytics/>
   </StrictMode>,
 )
