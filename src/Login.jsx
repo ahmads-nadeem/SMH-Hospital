@@ -1,7 +1,7 @@
 import './App.css'
 import './Login.css'
 import Header from './Header';
-import img from './assets/logo.jpg'
+import img from './assets/Logo.jpg'
 
 function Login(){
 
