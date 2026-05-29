@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css'
 import './NewPatient.css'
 import Header from './Header';
-import MedicinSelection from './medicinSelection';
+import MedicinSelection from './MedicinSelection';
 function NewPatient() {
     let [medicinSelected, updateMedicin] = useState(null)
     async function postnewpatient() {
