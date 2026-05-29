@@ -9,7 +9,7 @@ function Home(){
         <>
             <Header/>
             <Cards/>
-            <ShortTable/>
+            <ShortTable heading="Today's Patients"/>
         </>
     )
 }

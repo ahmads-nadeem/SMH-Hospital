@@ -34,7 +34,7 @@ function Cards() {
                     </div>
                     <div className="actions">
                         <button><Link id='homelinks' to={'/new-patient'}>➕ New Patient</Link></button>
-                        <button><Link id='homelinks' to={'/book-appointment'}>📅 Book Appointment</Link></button>
+                        <button><Link id='homelinks' to={'/new-purchase'}>📦 New Purchase</Link></button>
                         <button><Link id='homelinks' to={'/emergency-patient'}>🚨 Emergency</Link></button>
                         <button><Link id='homelinks' to={'/reports'}>📄 Reports</Link></button>
                     </div>

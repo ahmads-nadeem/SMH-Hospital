@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom';
 import './App.css';
 import './ShortTable.css'
 
-function ShortTable() {
+function ShortTable({ heading }) {
     return (
         <>
             <section className='shortTable-section'>
                 <div className="headingh2-div">
-                    <h2 className='h2headings'>Today's Patients</h2>
+                    <h2 className='h2headings'>{heading}</h2>
                 </div>
                 <div className="table-10">
                     <table>
