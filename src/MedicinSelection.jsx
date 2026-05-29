@@ -1,4 +1,4 @@
-import './medicinSelection.css';
+import './MedicinSelection.css';
 import { useEffect, useState } from 'react';
 
 function MedicinSelection() {
