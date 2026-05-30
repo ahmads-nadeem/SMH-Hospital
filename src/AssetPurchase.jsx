@@ -42,8 +42,8 @@ function AssetPurchase() {
 
     // Api call to send purchase data to backend
     async function sendPurchase() {
-        let api = 'http://localhost:1190/users/purchase-assets';
-        let req = fetch(api, {
+        let api = `${import.meta.env.VITE_API_BASE_URL}/users/purchase-assets`;
+        let req =await fetch(api, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
@@ -62,6 +62,8 @@ function AssetPurchase() {
                 sellPrice
             })
         });
+        let responseData = await req.json(); // Response ko read karne ke liye bhi await zaroori hai
+        console.log(responseData);
     }
 
     return (
