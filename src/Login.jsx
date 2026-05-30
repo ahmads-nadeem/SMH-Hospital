@@ -12,7 +12,8 @@ function Login(){
 
     async function handleLogin(e){
         e.preventDefault();
-        let res = await fetch('http://localhost:1190/users/login',{
+        let api = `${import.meta.env.VITE_API_BASE_URL}/users/login`;
+        let res = await fetch(api, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
