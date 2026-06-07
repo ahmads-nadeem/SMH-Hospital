@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;     
+}
+.database-page{
+    position: relative;
+}
+.returnbtn{
+    background-color: rgba(22, 147, 188, 0.8);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 25px 35px;
+    cursor: pointer;
+    border-radius: 10px;
+    position: absolute;
+    top: 14%;
+    left: 0;
+}
+.returnbtn:hover{
+    background-color: rgb(56, 162, 197);
+}

@@ -16,6 +16,14 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import ProtectedRoute from './ProtectedRoute.jsx';
 
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faUsers, faPills, faCartPlus } from '@fortawesome/free-solid-svg-icons'; // <-- Yahan faUsers add kiya
+
+// Library mein register karein
+library.add(faUsers, faPills, faCartPlus); // <-- Yahan bhi include kar diya
+
+
+
 const Routes = createBrowserRouter(
   [
     {

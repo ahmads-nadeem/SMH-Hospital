@@ -9,9 +9,10 @@ function Login(){
     const navigate = useNavigate();
     let [username, setUsername] = useState('');
     let [password, setPassword] = useState('');
-
+    let [status, setStatus] = useState(false);
     async function handleLogin(e){
         e.preventDefault();
+        setStatus(true);
         let api = `${import.meta.env.VITE_API_BASE_URL}/users/login`;
         let res = await fetch(api, {
             method: 'POST',
@@ -25,24 +26,18 @@ function Login(){
             credentials: 'include'
         });
         const data = await res.json();
-        if (res.status === 200) {
-            // alert("Login Successful!");
-            
+        setStatus(false);
+        if (res.status === 200) {            
             navigate('/'); 
             localStorage.setItem('userLoggedIn', 'true');
-            // console.log(localStorage.getItem('userLoggedIn'));
-            // window.location.href = '/';
         } else {
             alert(data.message || "Invalid Username or Password!");
         }
     }
-
-
-
-
     return(
-        <>
-            <section id='login-section'>
+        <>  {
+            !status? (
+                <section id='login-section'>
                 <div className="animation">
                     <div className="logo-animation-logo">
                         <figure>
@@ -76,7 +71,27 @@ function Login(){
                 </div>
 
             </section>
+            ):
+            (
+                <div className="loader-container">
+                    <div className="loader">
+                        <p>Logging in...</p>
+                    </div>
+                </div>
+            )
+        }
+            
         </>
     )
 }
 export default Login;
+
+
+
+
+
+
+
+
+
+
