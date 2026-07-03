@@ -10,6 +10,7 @@ import Profile from './Profile.jsx';
 import Settings from './Settings.jsx';
 import Help from './Help.jsx';
 import Login from './Login.jsx';
+import Register from './Register.jsx';
 import Database from './Database.jsx';
 import TodayPatientDetails from './TodayPatientDetails.jsx';
 import { Analytics } from '@vercel/analytics/react';
@@ -74,13 +75,17 @@ const Routes = createBrowserRouter(
     {
       path: '/login',
       element: <Login />
+    },
+    {
+      path: '/register',
+      element: <Register />
     }
   ]
 )
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <RouterProvider router={Routes} />
-    <Analytics />
-    <SpeedInsights />
+    {/* <Analytics /> */}
+    {/* <SpeedInsights /> */}
   </StrictMode>,
 )

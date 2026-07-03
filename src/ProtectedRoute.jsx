@@ -1,7 +1,5 @@
 import { Navigate, Outlet } from 'react-router-dom';
 
-
-
 function ProtectedRoute({ children }) {
     // Browser ki storage se check karo ke token majood hai ya nahi
     const isAuthenticated = localStorage.getItem('userLoggedIn'); 

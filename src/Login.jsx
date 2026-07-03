@@ -3,7 +3,9 @@ import './Login.css'
 import Header from './Header';
 import img from './assets/Logo.jpg'
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
+import { Link } from 'react-router-dom';    
+
 
 function Login() {
     const navigate = useNavigate();
@@ -48,16 +50,17 @@ function Login() {
                     </div>
                     <div className="form">
                         <form action="">
-                            <label htmlFor="">Username</label>
+                            <label htmlFor="username">Username/Gmail:</label>
                             <br />
                             <input
                                 type="text"
+                                id="username"
                                 placeholder='Enter Your Username'
                                 value={username}
                                 onChange={(e) => { setUsername(e.target.value) }}
                             />
                             <br />
-                            <label htmlFor="">Password</label>
+                            <label htmlFor="password">Password:</label>
                             <br />
                             <input
                                 type="text"
@@ -69,10 +72,8 @@ function Login() {
                             <button onClick={handleLogin}>Login</button>
                             <div className="line"></div>
                             <p className='para'>Don't have an account</p>
-                            <button><Link to='/'>Register</Link></button>
+                            <button id='registerBtn'><Link to='/register'>Register</Link></button>
                         </form>
-
-
                     </div>
 
                 </section>

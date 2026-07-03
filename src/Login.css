@@ -1,42 +1,48 @@
-
-#login-section{
+#login-section {
   width: 100%;
   height: 100vh;
   display: flex;
 }
-.animation{
+
+.animation {
   width: 50%;
   height: 100vh;
   background-color: white;
 }
-.line{
+
+.line {
   width: 80%;
   height: 1px;
   border: 1px solid white;
   margin-top: 5%;
 }
-.para{
-margin-top: 10px;
+
+.para {
+  margin-top: 10px;
 }
-.form{
+
+.form {
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.form form{
+
+.form form {
   width: 70%;
   height: 500px;
   margin-top: 2%;
 }
-.form form label{
+
+.form form label {
   display: block;
   font-size: 20px;
   color: white;
-  margin:25px 0px 0px 0px;
+  margin: 25px 0px 0px 0px;
 }
-.form form input{
+
+.form form input {
   width: 80%;
   display: block;
   font-size: 19px;
@@ -47,11 +53,13 @@ margin-top: 10px;
   color: white;
   border-bottom: 1.5px solid black;
 }
-.form form input::placeholder{
+
+.form form input::placeholder {
   color: white;
   opacity: 0.9;
 }
-.form form button{
+
+.form form button {
   display: block;
   width: 80%;
   height: 50px;
@@ -63,44 +71,61 @@ margin-top: 10px;
   cursor: pointer;
   margin-top: 20px;
 }
-.form form button:hover{
+
+.form form button:hover {
   box-shadow: 0px 0px 5px 2px #ed008c;
 }
-.logo-animation-logo{
+
+.logo-animation-logo {
   text-align: center;
 }
-.logo-animation-logo figure img{
+
+#registerBtn a {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  line-height:250%;
+}
+
+.logo-animation-logo figure img {
   width: 200px;
   margin-top: 110px;
 }
-.logo-animation-logo h2{
+
+.logo-animation-logo h2 {
   font-size: 30px;
   margin-top: 5%;
 }
+
 /* now the responsive section is starting */
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {}
 
-}
 @media screen and (max-width: 768px) {
-  #login-section{
+  #login-section {
     flex-direction: column;
   }
-  #login-section .animation{
+
+  #login-section .animation {
     background-color: white;
     width: 100%;
     height: 30%;
   }
-  .animation h2{
+
+  .animation h2 {
     margin-top: 0px;
   }
-  .form{
+
+  .form {
     height: auto;
   }
-  .form form{
+
+  .form form {
     height: 90%;
   }
 }
-@media screen and (max-width: 480px) {
 
-}
+@media screen and (max-width: 480px) {}
