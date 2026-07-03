@@ -61,7 +61,6 @@
 
 .form form button {
   display: block;
-  /* color: red; */
   width: 80%;
   height: 50px;
   border: 1px solid transparent;
@@ -103,9 +102,44 @@
 
 /* now the responsive section is starting */
 
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+
+  /* .form form button{
+    width: 100%;
+  } */
+  /* .line{
+    width: 100%;
+  }
+  form{
+    width: 100%;
+  }
+  .form form{
+    width: 80%;
+  }
+  .form form input{
+    width: 100%;
+  } */
+}
 
 @media screen and (max-width: 768px) {
+  .logo-animation-logo figure img {
+    width: 125px;
+    margin-top: 0px;
+  }
+  /* .logo-animation-logo{
+    position: relative;
+  } */
+  .logo-animation-logo h2 {
+    font-size: 25px;
+    margin-top: -10px;
+    /* position: relative;
+    top: 5%;
+    left: 20%; */
+  }
+  /* form{
+    width: 100%;
+  } */
+ 
   #login-section {
     flex-direction: column;
   }
