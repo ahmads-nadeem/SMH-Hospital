@@ -61,6 +61,7 @@
 
 .form form button {
   display: block;
+  /* color: red; */
   width: 80%;
   height: 50px;
   border: 1px solid transparent;
@@ -128,4 +129,24 @@
   }
 }
 
-@media screen and (max-width: 480px) {}
+@media screen and (max-width: 480px) {
+  .logo-animation-logo figure img {
+    width: 150px;
+    margin-top: 22px;
+  }
+  .form form button{
+    width: 100%;
+  }
+  .line{
+    width: 100%;
+  }
+  form{
+    width: 100%;
+  }
+  .form form{
+    width: 80%;
+  }
+  .form form input{
+    width: 100%;
+  }
+}
