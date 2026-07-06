@@ -3,8 +3,8 @@ import './Login.css'
 import Header from './Header';
 import img from './assets/Logo.jpg'
 import { useState } from 'react';
-import { useNavigate} from 'react-router-dom';
-import { Link } from 'react-router-dom';    
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 function Login() {
@@ -49,26 +49,27 @@ function Login() {
                         </div>
                     </div>
                     <div className="form">
+                        {/* <div className="shade"></div> */}
                         <form action="">
-                            <label htmlFor="username">Username/Gmail:</label>
-                            <br />
-                            <input
-                                type="text"
-                                id="username"
-                                placeholder='Enter Your Username'
-                                value={username}
-                                onChange={(e) => { setUsername(e.target.value) }}
-                            />
-                            <br />
-                            <label htmlFor="password">Password:</label>
-                            <br />
-                            <input
-                                type="text"
-                                placeholder='Enter Your Password'
-                                value={password}
-                                onChange={(e) => { setPassword(e.target.value) }}
-                            />
-                            <br />
+                            <div className="form-input1">
+                                <label htmlFor="username">Username/Gmail:</label>
+                                <input
+                                    type="text"
+                                    id="username"
+                                    placeholder='Enter Your Username'
+                                    value={username}
+                                    onChange={(e) => { setUsername(e.target.value) }}
+                                />
+                            </div>
+                            <div className="form-input2">
+                                <label htmlFor="password">Password:</label>
+                                <input
+                                    type="text"
+                                    placeholder='Enter Your Password'
+                                    value={password}
+                                    onChange={(e) => { setPassword(e.target.value) }}
+                                />
+                            </div>
                             <button onClick={handleLogin}>Login</button>
                             <div className="line"></div>
                             <p className='para'>Don't have an account</p>

@@ -5,7 +5,7 @@
 }
 
 .animation {
-  width: 50%;
+  width: 80%;
   height: 100vh;
   background-color: white;
 }
@@ -27,67 +27,86 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(to right,rgba(106, 115, 115, 0.915) 70%, rgba(33, 136, 136, 0.915)) 30%, url('./assets/login_background.png');
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: overlay;
 }
 
 .form form {
   width: 70%;
   height: 500px;
   margin-top: 2%;
+  margin-left: 10%;
+}
+
+.form-input1,
+.form-input2 {
+  margin-bottom: 20px;
 }
 
 .form form label {
   display: block;
   font-size: 20px;
-  color: white;
-  margin: 25px 0px 0px 0px;
+  margin: 30px 0px 10px 0px;
 }
 
 .form form input {
   width: 80%;
   display: block;
-  font-size: 19px;
-  padding: 1%;
+  font-size: 16px;
+  padding: 2.5%;
   outline: none;
-  background-color: transparent;
-  border: none;
-  color: white;
-  border-bottom: 1.5px solid black;
+  background-color: white;
+  border: 1px solid gray;
+  border-radius: 25px;
+  color: rgb(105, 103, 103);
 }
 
 .form form input::placeholder {
-  color: white;
+  color: gray;
   opacity: 0.9;
 }
 
 .form form button {
   display: block;
   width: 80%;
-  height: 50px;
+  padding: 2.5%;
   border: 1px solid transparent;
-  border-radius: 10px;
-  background-color: white;
+  background-color: #396da9;
   font-size: 19px;
-  font-weight: 600;
   cursor: pointer;
   margin-top: 20px;
+  color: white;
+  border-radius: 25px;
 }
 
 .form form button:hover {
-  box-shadow: 0px 0px 5px 2px #ed008c;
+  box-shadow: 0px 0px 10px 2px white;
 }
 
 .logo-animation-logo {
   text-align: center;
 }
 
-#registerBtn a {
+/* #registerBtn a {
   width: 100%;
   display: inline-block;
   text-align: center;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  padding: 1.5%;
   line-height:250%;
+} */
+
+#registerBtn a {
+  display: block;
+}
+
+#registerBtn {
+  background-color: transparent;
+  border: 2px solid #396da9;
+  color: #396da9;
 }
 
 .logo-animation-logo figure img {
@@ -126,6 +145,7 @@
     width: 125px;
     margin-top: 0px;
   }
+
   /* .logo-animation-logo{
     position: relative;
   } */
@@ -136,10 +156,11 @@
     top: 5%;
     left: 20%; */
   }
+
   /* form{
     width: 100%;
   } */
- 
+
   #login-section {
     flex-direction: column;
   }
@@ -168,19 +189,24 @@
     width: 150px;
     margin-top: 22px;
   }
-  .form form button{
+
+  .form form button {
     width: 100%;
   }
-  .line{
+
+  .line {
     width: 100%;
   }
-  form{
+
+  form {
     width: 100%;
   }
-  .form form{
+
+  .form form {
     width: 80%;
   }
-  .form form input{
+
+  .form form input {
     width: 100%;
   }
 }

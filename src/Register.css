@@ -1,66 +1,138 @@
 @keyframes slideAnimation {
-    0% { transform: translateY(-100%); }
-  100% { transform: translateY(0); }
+    0% {
+        transform: translateY(-100%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }
+
 @keyframes registerForm {
-    0%{
+    0% {
         box-shadow: 0px 0px 0px 0px white;
     }
-    50%{
+
+    50% {
         box-shadow: 0px 0px 10px 2px white;
     }
-    100%{
+
+    100% {
         box-shadow: 0px 0px 0px 0px white;
     }
 }
-.registerForm{
+
+body {
+    background-color: #c9daf8;
+}
+.transparent-img {
+    width: 30%;
+    position: fixed;
+    bottom: 0;
+    left: -10%;
+}
+.trans2{
+    width: 50%;
+    top: -10%;
+    left: 70%;
+}
+.trans3{
+    width: 10%;
+    top: 50%;
+    left: 70%;
+}
+.pass{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.pass input{
+    width: 100%;
+}
+.passwordHide{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 5px;
+    top: 12%;
+    cursor: pointer;
+}
+#passwordInput{
+    height: 36px;
+}
+.registerForm {
     width: 35%;
-    height: 425px;
+    height: 90vh;
     background-color: white;
-    margin:5% auto;
+    margin: 2% auto;
     border-radius: 5px;
     padding: 20px;
-    animation: slideAnimation 0.2s linear 0s 1, registerForm 1s linear 1s infinite;
+    box-shadow: 0px 0px 10px 2px gray;
+    animation: slideAnimation 0.2s linear 0s 1;
 }
+
+.registerFrom h3 {
+    display: inline-block;
+}
+
+.registerForm h3 a {
+    display: inline;
+    text-decoration: none;
+    color: #396da9;
+    font-weight: 400;
+}
+
 .inputFields {
-    height: 15%;
+    height: 13%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    margin: 20px 0px;
+    margin: 15px 0px;
 }
-.inputFields input{
-    height: 50%;
+
+.inputFields input {
+    height: 60%;
     padding-left: 5px;
     font-size: 18px;
     outline: none;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: #efebe0;
 }
-.registerForm button{
-   display: inline-block;
+
+.registerForm button {
+    display: inline-block;
     width: 100%;
-    height: 10%;
+    height: 9%;
     cursor: pointer;
     font-size: 19px;
-    background-color: #ed008c;
+    background-color: #9a4369;
     outline: none;
     border: 1px solid gray;
-    border-radius: 10px;
+    border-radius: 20px;
+    color: white;
+    margin: 10px auto;
 }
-.registerForm button:hover{
+
+.registerForm button:hover {
     background-color: #6d64c5;
     color: white;
 }
-.registerLogo{
+
+.registerLogo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.registerLogo h2{
+
+.registerLogo h2 {
     margin-top: -10px;
     font-size: 19px;
 }
-.registerLogo img{
+
+.registerLogo img {
     width: 22%;
     height: 5%;
 }
