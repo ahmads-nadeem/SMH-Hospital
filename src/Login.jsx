@@ -1,7 +1,7 @@
 import './App.css'
 import './Login.css'
 import Header from './Header';
-import img from './assets/Logo.jpg'
+import img from './assets/header_logo.jpg'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';

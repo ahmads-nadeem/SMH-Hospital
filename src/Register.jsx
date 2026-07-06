@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import './Register.css';
-import img from './assets/Logo.jpg'
+import img from './assets/header_logo.jpg'
 import imgtrans from './assets/transparant img.png'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
