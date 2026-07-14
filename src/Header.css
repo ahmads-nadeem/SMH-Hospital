@@ -15,7 +15,9 @@ header {
   justify-content: space-between;
   align-items: center;
   width: 95%;
+  /* background-color: rgb(70, 69, 69); */
   background-color: white;
+
   margin: auto;
   border: 1px solid transparent;
   border-radius: 10px;

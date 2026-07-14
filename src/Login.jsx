@@ -15,7 +15,7 @@ function Login() {
     async function handleLogin(e) {
         e.preventDefault();
         setStatus(true);
-        let api = `${import.meta.env.VITE_API_BASE_URL}/users/login`;
+        let api = `${import.meta.env.VITE_API_BASE_URL}/auth/login`;
         let res = await fetch(api, {
             method: 'POST',
             headers: {
@@ -49,7 +49,6 @@ function Login() {
                         </div>
                     </div>
                     <div className="form">
-                        {/* <div className="shade"></div> */}
                         <form action="">
                             <div className="form-input1">
                                 <label htmlFor="username">Username/Gmail:</label>
