@@ -137,6 +137,7 @@
     .registerForm {
         margin-top: 20px;
         width: 50%;
+        /* height: 80vh; */
     }
     .trans3{
         display: none;
@@ -147,6 +148,7 @@
     .registerForm {
         margin-top: 20px;
         width: 90%;
+        height: 80vh;
     }
     .trans3{
         display: none;
@@ -154,5 +156,7 @@
 }
 
 @media screen and (max-width: 480px) {
-    
+    .registerForm button{
+        color: red;
+    }
 }
