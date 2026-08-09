@@ -1,7 +1,7 @@
-import './App.css'
+import '../App.css'
 import './Login.css'
-import Header from './Header';
-import img from './assets/header_logo.jpg'
+import Header from '../components/Header';
+import img from '../assets/header_logo.jpg'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
@@ -11,7 +11,7 @@ function Login() {
     const navigate = useNavigate();
     let [username, setUsername] = useState('');
     let [password, setPassword] = useState('');
-    let [status, setStatus] = useState(false);
+    let [logStatus, setStatus] = useState(false);
     async function handleLogin(e) {
         e.preventDefault();
         setStatus(true);
@@ -29,7 +29,7 @@ function Login() {
         });
         const data = await res.json();
         setStatus(false);
-        if (res.status === 200) {
+        if (res.status == 200) {
             navigate('/');
             localStorage.setItem('userLoggedIn', 'true');
         } else {
@@ -38,7 +38,7 @@ function Login() {
     }
     return (
         <>  {
-            !status ? (
+            !logStatus ? (
                 <section id='login-section'>
                     <div className="animation">
                         <div className="logo-animation-logo">

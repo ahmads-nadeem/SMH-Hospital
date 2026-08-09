@@ -1,23 +1,23 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Home from './Home.jsx';
-import NewPatient from './NewPatient.jsx';
-import Reports from './Reports.jsx';
-import EmergencyPatient from './EmergencyPatient.jsx';
-import AssetPurchase from './AssetPurchase.jsx';
-import Profile from './Profile.jsx';
-import Settings from './Settings.jsx';
-import Help from './Help.jsx';
-import Login from './Login.jsx';
-import Register from './Register.jsx';
-import Database from './Database.jsx';
-import TodayPatientDetails from './TodayPatientDetails.jsx';
+import Home from './pages/Home.jsx';
+import NewPatient from './pages/NewPatient.jsx';
+import Reports from './pages/Reports.jsx';
+import EmergencyPatient from './pages/EmergencyPatient.jsx';
+import AssetPurchase from './pages/AssetPurchase.jsx';
+import Profile from './pages/Profile.jsx';
+import Settings from './pages/Settings.jsx';
+import Help from './pages/Help.jsx';
+import Login from './pages/Login.jsx';
+import Register from './pages/Register.jsx';
+import Database from './pages/Database.jsx';
+import TodayPatientDetails from './pages/TodayPatientDetails.jsx';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
-import ProtectedRoute from './ProtectedRoute.jsx';
+import ProtectedRoute from './components/auth/ProtectedRoute.jsx';
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faUsers, faPills, faCartPlus, faEye } from '@fortawesome/free-solid-svg-icons'; 
+import { faUsers, faPills, faCartPlus, faEye } from '@fortawesome/free-solid-svg-icons';
 library.add(faUsers, faPills, faCartPlus, faEye);
 
 const Routes = createBrowserRouter(
@@ -78,9 +78,10 @@ const Routes = createBrowserRouter(
   ]
 )
 createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <RouterProvider router={Routes} />
-    {/* <Analytics /> */}
-    {/* <SpeedInsights /> */}
-  </StrictMode>,
+  // <StrictMode>
+  <RouterProvider router={Routes} />
+    // {/* <Analytics /> */ }
+    // {/* <SpeedInsights /> */ }
+  // </StrictMode>
+  ,
 )

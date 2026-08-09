@@ -1,4 +1,4 @@
-import './App.css'
+import '../App.css'
 import './DatabaseCards.css';
 import { useState } from 'react';
 import Table from './Table';

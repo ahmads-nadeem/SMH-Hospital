@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom';
-import './App.css'
+import '../App.css'
 import './Cards.css'
-function Cards() {
+function Cards({role}) {
+    // console.log
+    
     return (
         <section className='section1'>
             <div className="box">
@@ -34,7 +36,7 @@ function Cards() {
                     </div>
                     <div className="actions">
                         <button><Link id='homelinks' to={'/new-patient'}>➕ New Patient</Link></button>
-                        <button><Link id='homelinks' to={'/new-purchase'}>📦 New Purchase</Link></button>
+                        <button><Link id='homelinks' to={'/new-purchase'}>{role=='doctor'? "Doctors":"📦 New Purchase"}</Link></button>
                         <button><Link id='homelinks' to={'/emergency-patient'}>🚨 Emergency</Link></button>
                         <button><Link id='homelinks' to={'/reports'}>📄 Reports</Link></button>
                     </div>

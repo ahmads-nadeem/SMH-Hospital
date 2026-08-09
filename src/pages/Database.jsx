@@ -1,7 +1,7 @@
-import './App.css'
+import '../App.css'
 import './Database.css';
-import Header from './Header';
-import DatabaseCards from './DatabaseCards';
+import Header from '../components/Header';
+import DatabaseCards from '../components/DatabaseCards';
 
 
 function Database(){

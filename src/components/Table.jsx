@@ -1,7 +1,5 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-
-
 function Table({ title, api_url }) {
     let [data, setData] = useState([]);
     let [ApiData, setApiData] = useState([]);

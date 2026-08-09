@@ -1,8 +1,8 @@
-import Header from "./Header";
-import ShortTable from "./ShortTable";
+import Header from "../components/Header";
+import ShortTable from "../components/ShortTable";
 import { useEffect, useState } from "react";
 import './AssetPurchase.css';
-import './App.css';
+import '../App.css';
 function AssetPurchase() {
     const [name, setName] = useState('');
     const [category, setCategory] = useState('tabs');

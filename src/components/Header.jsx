@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import './App.css'
+import '../App.css'
 import './Header.css'
-import logo from './assets/header_logo.jpg'
-import userpic from './assets/user-pic.jpg'
+import logo from '../assets/header_logo.jpg'
+import userpic from '../assets/user-pic.jpg'
 import { useState } from "react";
 function Header() {
     let [click,updateClick] = useState(false)
