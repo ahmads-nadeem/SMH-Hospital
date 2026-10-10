@@ -4,6 +4,7 @@ import img from '../assets/header_logo.jpg'
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Loading from '../components/Loading';
 
 
 function Login() {
@@ -26,7 +27,7 @@ function Login() {
         check()
     }, [])
     if (session === null) {
-        return <div>Loading...</div>;
+        return <Loading/>;
     }
     if(session){
         navigate('/');

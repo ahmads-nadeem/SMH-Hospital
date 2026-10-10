@@ -1,6 +1,4 @@
-import React from 'react';
-
-function Loading({ message = "Loading, please wait..." }) {
+export default function Loading({ message = "Loading, please wait..." }) {
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gray-900/60 backdrop-blur-sm transition-opacity">
       {/* Outer Card */}
@@ -25,4 +23,3 @@ function Loading({ message = "Loading, please wait..." }) {
   );
 }
 
-export default Loading;
