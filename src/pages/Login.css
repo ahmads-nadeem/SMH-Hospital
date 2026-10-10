@@ -93,24 +93,14 @@
   text-align: center;
 }
 
-/* #registerBtn a {
-  width: 100%;
-  display: inline-block;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  padding: 1.5%;
-  line-height:250%;
-} */
-
 #registerBtn a {
   display: block;
 }
 
 #registerBtn {
   background-color: transparent;
-  border: 2px solid #396da9;
-  color: #396da9;
+  border: 2px solid white;
+  color: white;
 }
 
 .logo-animation-logo figure img {
@@ -202,15 +192,23 @@
     width: 100%;
   }
 
-  form {
-    width: 100%;
-  }
-
   .form form {
     width: 80%;
   }
-
   .form form input {
     width: 100%;
+  }
+  /* .logo-animation-logo{
+    display: none;
+  } */
+  .animation{
+    display: none;
+  }
+  .form{
+    width: 100%;
+    height: 100vh;
+  }
+  .form form{
+    margin: 0px;
   }
 }

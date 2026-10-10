@@ -1,17 +1,29 @@
-import { useEffect } from 'react';
-import { Navigate, Outlet } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Navigate, Outlet, useLocation  } from 'react-router-dom';
 function ProtectedRoute() {
-    const isAuthenticated = localStorage.getItem('userLoggedIn'); 
-    // let isAuthenticated;
-    // useEffect(() => {
-    //     async () => {
-    //         const req = await fetch(`${import.meta.env.VITE_API_BASE_URL}/islogin`);
-    //         const res = await req.json();
-    //         (res.status) ? (isAuthenticated == 'ture') : (isAuthenticated == 'ture');
-    //     }
-    // }, [])
-    return isAuthenticated ? <Outlet /> : <Navigate to="/login" replace />;
-    return <Outlet/>
+    const [session, setSession] = useState(null)
+    const location = useLocation();
+    async function check() {
+        const req = await fetch(`${import.meta.env.VITE_API_BASE_URL}/islogin/pre-auth`, {
+            method: 'GET',
+            credentials: 'include',
+        });
+        setSession(req.ok)
+        // const result =await req.json();        
+    }
+    useEffect(() => {
+        check()
+        const interval = setInterval(() => {
+            check();
+        }, 60000);
+
+        // Cleanup interval on unmount
+        return () => clearInterval(interval);
+    }, [location.pathname])
+    if (session === null) {
+        return <div>Loading...</div>;
+    }
+    return (session) ? <Outlet /> : <Navigate to="/login" replace />;
 }
 export default ProtectedRoute;
 

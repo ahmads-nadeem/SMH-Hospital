@@ -1,20 +1,19 @@
 import { Link } from 'react-router-dom';
 import '../App.css'
 import './Cards.css'
-function Cards({role}) {
-    // console.log
-    
+function Cards({ role }) {
+
     return (
         <section className='section1'>
             <div className="box">
                 <div className="xcard">
                     <div className="heading">
-                        <h2>Today's Overview</h2>
+                        <h2 className='font-bold'>Today's Overview</h2>
                     </div>
                     <div className="overview">
                         <div className="databox">
                             <h3>22</h3>
-                            <p>Total Patients</p>
+                            <p>Today Patients</p>
                         </div>
                         <div className="databox">
                             <h3>22</h3>
@@ -32,18 +31,18 @@ function Cards({role}) {
                 </div>
                 <div className="xcard">
                     <div className="heading">
-                        <h2>Quick Actions</h2>
+                        <h2 className='font-bold'>Quick Actions</h2>
                     </div>
                     <div className="actions">
                         <button><Link id='homelinks' to={'/new-patient'}>➕ New Patient</Link></button>
-                        <button><Link id='homelinks' to={'/new-purchase'}>{role=='doctor'? "Doctors":"📦 New Purchase"}</Link></button>
-                        <button><Link id='homelinks' to={'/emergency-patient'}>🚨 Emergency</Link></button>
+                        <button><Link id='homelinks' className='rounded-lg bg-blue-600 px-4 py-2 text-white opacity-50 cursor-not-allowed' to={role == 'doctor' ? '' : '/new-purchase'}>{role == 'doctor' ? "--------------" : "📦 New Purchase"}</Link></button>
+                        {/* <button><Link id='homelinks' to={'/patient'}>{role=='doctor'? "Patients":"⏳ Queue"}</Link></button> */}
+                        <button><Link id='homelinks' to={'/patient'}>{role == 'doctor' ? "⏳ Queue" : "⏳ Queue"}</Link></button>
                         <button><Link id='homelinks' to={'/reports'}>📄 Reports</Link></button>
                     </div>
                 </div>
             </div>
         </section>
-
     );
 }
 export default Cards;

@@ -1,50 +1,69 @@
 import { useEffect, useState } from 'react';
 import '../App.css'
-import './NewPatient.css'
 import Header from '../components/Header';
 import MedicinSelection from '../components/MedicinSelection';
+import PatientDetails from '../components/PatientDetails';
+import DoctorPatients from '../components/DoctorPatients'
 function NewPatient() {
-    let [medicinSelected, updateMedicin] = useState(null)
-    async function postnewpatient() {
-        const postnewpatientapi = await fetch(
-            'http//localhost:1190/user/',
-            {
-                method: "post",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    name: 'Ahmad',
-                    age: 22
-                })
-            }
-        )
-    }
+    const [roll, setRoll] = useState('');
+    const [patients, setPatients] = useState();
+    const [details, setDetails] = useState();
+    const FromChild1 = (data) => {
+        setPatients(data);
+    };
+
+
+    console.log(patients);
+    console.log(details);
+    
+    
+
+
+
+    // const [servicesData, setServicesData] = useState([]);
+    // setRoll('doctor');
+
+    // useEffect(() => {
+    //     async function api() {
+    //         const service = await fetch(`${import.meta.env.VITE_API_BASE_URL}/users/doctor-services`);
+    //         const res = await service.json();
+    //         setServicesData(res)
+    //     }
+    //     api()
+    // }, [])
+
+    // async function sendPatient() {
+    //     const patientSend = await fetch(
+    //         'http//localhost:1190/user/',
+    //         {
+    //             method: "post",
+    //             headers: {
+    //                 'Content-Type': 'application/json'
+    //             },
+    //             body: JSON.stringify({
+    //                 name: 'Ahmad',
+    //                 age: 22
+    //             })
+    //         }
+    //     )
+    // }
     return (
         <>
             <Header />
-            <section id='newpatientsection'>
-                <div className="details-submit">
-                    <h2>Conform User Details & Make Bill</h2>
-                    <div className="submit-bill">
-                        <form id='form-1'>
-                            <div className="submit-bill-form-out">
-                                <div className="submit-bill-form1">
-                                    <label htmlFor="">Name:</label>
+            <PatientDetails onSendData={FromChild1} />
+            {
+                roll == 'doctor' ? <DoctorPatients servicesData={servicesData}  /> : <MedicinSelection />
+            }
 
-                                    <input type="text" placeholder='Enter Patient Name' required />
-                                </div>
-                                <div className="submit-bill-form1">
-                                    <label htmlFor="">Phone Number:</label>
 
-                                    <input type="number" placeholder='Enter Patient Number' required />
-                                </div>
-                            </div>
-                            <button id='submit-button' type='submit'>Submit Bill</button>
-                        </form>edic
-                    </div>
-                </div>
-                <div className="test-select">
+        </>
+    )
+}
+export default NewPatient;
+
+
+// This is the optional feature which we will decide later to deploy
+{/* <div className="test-select">
                     <h2>Select Test</h2>
                     <div className="medical-test">
                         <form action="">
@@ -113,10 +132,4 @@ function NewPatient() {
 
                         </form>
                     </div>
-                </div>
-            </section>
-            <MedicinSelection />
-        </>
-    )
-}
-export default NewPatient;
+                </div> */}

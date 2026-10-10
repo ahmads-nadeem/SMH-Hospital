@@ -63,14 +63,14 @@ function AssetPurchase() {
             })
         });
         let responseData = await req.json(); // Response ko read karne ke liye bhi await zaroori hai
-        console.log(responseData);
+        // console.log(responseData);
     }
 
     return (
         <>
             <Header />
             <div className="asset-purchase">
-                <div className="asset-purchase-div">
+                <div className="bg-white asset-purchase-div">
                     <div className="input-div">
                         <label htmlFor="">Asset Name</label>
                         <input

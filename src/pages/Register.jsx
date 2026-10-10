@@ -3,13 +3,26 @@ import '../App.css';
 import './Register.css';
 import img from '../assets/header_logo.jpg'
 import imgtrans from '../assets/transparant img.png'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-
-
-
 function Register() {
+    const navigate = useNavigate()
+    const [session, setSession] = useState(null)
+    useEffect(() => {
+        async function check() {
+            const req = await fetch(`${import.meta.env.VITE_API_BASE_URL}/islogin/pre-auth`, {
+                method: 'GET',
+                credentials: 'include',
+            });
+            setSession(req.ok)
+            if (req.ok) {
+                navigate('/', { replace: true });
+            }
+        }
+        check()
+    }, [])
+
     const [formData, useformData] = useState({
         name: '',
         mail: '',
@@ -30,16 +43,24 @@ function Register() {
             headers: {
                 'Content-Type': 'application/json'
             },
+            credentials: 'include',
             body: JSON.stringify({
                 formData
             }),
         })
-        const response = await result.json()
+        if (result.ok) {
+            navigate('/', { replace: true });
+        }
     }
+
     const [showPassword, setShowPassword] = useState(false);
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
     };
+    if (session === null) {
+        return <div>Loading...</div>;
+    }
+
     return (
         <>
             <section id='register-section'>

@@ -1,8 +1,7 @@
 import '../App.css'
 import './Login.css'
-import Header from '../components/Header';
 import img from '../assets/header_logo.jpg'
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
@@ -12,6 +11,27 @@ function Login() {
     let [username, setUsername] = useState('');
     let [password, setPassword] = useState('');
     let [logStatus, setStatus] = useState(false);
+
+
+    const [session, setSession] = useState(null)
+    useEffect(() => {
+        async function check() {
+            const req = await fetch(`${import.meta.env.VITE_API_BASE_URL}/islogin/pre-auth`, {
+                method: 'GET',
+                credentials: 'include',
+            });
+            // console.log(req.ok);
+            setSession(req.ok)
+        }
+        check()
+    }, [])
+    if (session === null) {
+        return <div>Loading...</div>;
+    }
+    if(session){
+        navigate('/');
+    }
+
     async function handleLogin(e) {
         e.preventDefault();
         setStatus(true);

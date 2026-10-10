@@ -3,6 +3,7 @@ import './DatabaseCards.css';
 import { useState } from 'react';
 import Table from './Table';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 function DatabaseCards() {
     let [statevar, setStatevar] = useState(null);
     function render() {

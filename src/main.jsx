@@ -1,10 +1,9 @@
-import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home.jsx';
 import NewPatient from './pages/NewPatient.jsx';
 import Reports from './pages/Reports.jsx';
-import EmergencyPatient from './pages/EmergencyPatient.jsx';
+import EmergencyPatient from './pages/Patient.jsx';
 import AssetPurchase from './pages/AssetPurchase.jsx';
 import Profile from './pages/Profile.jsx';
 import Settings from './pages/Settings.jsx';
@@ -13,9 +12,12 @@ import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import Database from './pages/Database.jsx';
 import TodayPatientDetails from './pages/TodayPatientDetails.jsx';
+import MannualPatient from './pages/MannualPatient.jsx'
+import ProtectedRoute from './components/auth/ProtectedRoute.jsx';
+
+
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
-import ProtectedRoute from './components/auth/ProtectedRoute.jsx';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faUsers, faPills, faCartPlus, faEye } from '@fortawesome/free-solid-svg-icons';
 library.add(faUsers, faPills, faCartPlus, faEye);
@@ -38,7 +40,7 @@ const Routes = createBrowserRouter(
           element: <Reports />
         },
         {
-          path: '/emergency-patient',
+          path: '/patient',
           element: <EmergencyPatient />
         },
         {
@@ -64,6 +66,10 @@ const Routes = createBrowserRouter(
         {
           path: '/today-patients-details',
           element: <TodayPatientDetails />
+        },
+        {
+          path:'/mannual-patient',
+          element: <MannualPatient/>
         }
       ]
     },
@@ -78,10 +84,8 @@ const Routes = createBrowserRouter(
   ]
 )
 createRoot(document.getElementById('root')).render(
-  // <StrictMode>
   <RouterProvider router={Routes} />
     // {/* <Analytics /> */ }
     // {/* <SpeedInsights /> */ }
-  // </StrictMode>
   ,
 )
