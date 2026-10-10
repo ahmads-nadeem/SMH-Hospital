@@ -26,9 +26,9 @@ function Login() {
         }
         check()
     }, [])
-    if (session === null) {
-        return <Loading/>;
-    }
+    // if (session === null) {
+    //     return <Loading/>;
+    // }
     if(session){
         navigate('/');
     }
@@ -101,9 +101,7 @@ function Login() {
             ) :
                 (
                     <div className="loader-container">
-                        <div className="loader">
-                            <p>Logging in...</p>
-                        </div>
+                        <Loading/>
                     </div>
                 )
         }
