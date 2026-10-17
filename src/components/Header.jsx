@@ -4,16 +4,23 @@ import './Header.css'
 import logo from '../assets/header_logo.jpg'
 import userpic from '../assets/user-pic.jpg'
 import { useState } from "react";
+import { useDispatch, useSelector } from 'react-redux';
+import {logoutUser} from '../redux/userSlice'
 function Header() {
+    const user = useSelector((store) => {
+        return store.setUser
+    })
+    const dispatcher = useDispatch()
+
     const navigate = useNavigate();
     let [click, updateClick] = useState(false)
     async function logout() {
-        const logoutReq = await fetch(`${import.meta.env.VITE_API_BASE_URL}/auth/logout`,{method:'GET', credentials:'include'})
+        const logoutReq = await fetch(`${import.meta.env.VITE_API_BASE_URL}/auth/logout`, { method: 'GET', credentials: 'include' })
         const res = await logoutReq.json()
         console.log(res.message);
-        
         if (logoutReq.status == '200') {
             navigate('/login', { replace: true })
+            dispatcher(logoutUser())
         }
     }
 
@@ -30,7 +37,7 @@ function Header() {
                 <div className="profile">
                     <div className="text">
                         <h3 className='font-bold'>Welcome back,</h3>
-                        <p style={{ color: 'gray' }}>Mr Ahmads</p>
+                        <p style={{ color: 'gray' }}>{user.userName.toUpperCase()}</p>
                     </div>
                     <div onClick={() => updateClick(!click)} className="accountpic">
                         <img src={userpic} alt="" />

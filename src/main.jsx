@@ -1,5 +1,7 @@
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { store } from './redux/store.js';
+import { Provider } from 'react-redux'
 import Home from './pages/Home.jsx';
 import NewPatient from './pages/NewPatient.jsx';
 import Reports from './pages/Reports.jsx';
@@ -14,7 +16,6 @@ import Database from './pages/Database.jsx';
 import TodayPatientDetails from './pages/TodayPatientDetails.jsx';
 import MannualPatient from './pages/MannualPatient.jsx'
 import ProtectedRoute from './components/auth/ProtectedRoute.jsx';
-
 
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
@@ -68,8 +69,8 @@ const Routes = createBrowserRouter(
           element: <TodayPatientDetails />
         },
         {
-          path:'/mannual-patient',
-          element: <MannualPatient/>
+          path: '/mannual-patient',
+          element: <MannualPatient />
         }
       ]
     },
@@ -84,8 +85,10 @@ const Routes = createBrowserRouter(
   ]
 )
 createRoot(document.getElementById('root')).render(
-  <RouterProvider router={Routes} />
-    // {/* <Analytics /> */ }
-    // {/* <SpeedInsights /> */ }
+  <Provider store={store}>
+    <RouterProvider router={Routes} />
+  </Provider>
+  // {/* <Analytics /> */ }
+  // {/* <SpeedInsights /> */ }
   ,
 )

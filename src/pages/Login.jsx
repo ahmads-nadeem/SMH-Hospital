@@ -5,15 +5,17 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Loading from '../components/Loading';
+import { useDispatch } from 'react-redux';
+import { setUserData } from '../redux/userSlice';
 
 
 function Login() {
+    const dispatch = useDispatch()
     const navigate = useNavigate();
     let [username, setUsername] = useState('');
     let [password, setPassword] = useState('');
     let [logStatus, setStatus] = useState(false);
-
-
+    const [showPass, setShowPass] = useState(false)
     const [session, setSession] = useState(null)
     useEffect(() => {
         async function check() {
@@ -21,7 +23,6 @@ function Login() {
                 method: 'GET',
                 credentials: 'include',
             });
-            // console.log(req.ok);
             setSession(req.ok)
         }
         check()
@@ -29,10 +30,9 @@ function Login() {
     // if (session === null) {
     //     return <Loading/>;
     // }
-    if(session){
+    if (session) {
         navigate('/');
     }
-
     async function handleLogin(e) {
         e.preventDefault();
         setStatus(true);
@@ -52,7 +52,7 @@ function Login() {
         setStatus(false);
         if (res.status == 200) {
             navigate('/');
-            localStorage.setItem('userLoggedIn', 'true');
+            dispatch(setUserData(data.user))
         } else {
             alert(data.message || "Invalid Username or Password!");
         }
@@ -64,9 +64,9 @@ function Login() {
                     <div className="animation">
                         <div className="logo-animation-logo">
                             <figure>
-                                <img src={img} alt="" />
+                                <img className='mx-auto' src={img} alt="" />
                             </figure>
-                            <h2>Salma Medernity Hospital</h2>
+                            <h2>Salma Hospital</h2>
                         </div>
                     </div>
                     <div className="form">
@@ -81,14 +81,19 @@ function Login() {
                                     onChange={(e) => { setUsername(e.target.value) }}
                                 />
                             </div>
-                            <div className="form-input2">
+                            {/* form-input2 */}
+                            <div className="inline bg-amber-300">
                                 <label htmlFor="password">Password:</label>
-                                <input
-                                    type="text"
-                                    placeholder='Enter Your Password'
-                                    value={password}
-                                    onChange={(e) => { setPassword(e.target.value) }}
-                                />
+                                <span className='relative bg-amber-300'>
+                                    <input
+                                        className='text-black'
+                                        type={showPass ? 'text' : 'password'}
+                                        placeholder='Enter Your Password'
+                                        value={password}
+                                        onChange={(e) => { setPassword(e.target.value) }}
+                                    />
+                                    <span className='absolute right-28 bottom-3 font-bold cursor-pointer' onClick={() => setShowPass(!showPass)}>{showPass ? <span>Hide</span> : <span>Show</span>}</span>
+                                </span>
                             </div>
                             <button onClick={handleLogin}>Login</button>
                             <div className="line"></div>
@@ -101,7 +106,7 @@ function Login() {
             ) :
                 (
                     <div className="loader-container">
-                        <Loading/>
+                        <Loading />
                     </div>
                 )
         }

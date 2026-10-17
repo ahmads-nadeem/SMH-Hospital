@@ -30,10 +30,9 @@
   background: linear-gradient(to right,rgba(106, 115, 115, 0.915) 70%, rgba(33, 136, 136, 0.915)) 30%, url('../assets/login_background.png');
   background-size: cover;
   background-position: center;
-  /* background-blend-mode: overlay; */
-  background-color: rgba(255, 255, 255, 0.7); /* transparent white */
+  background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px); /* Safari ke liye zaroori hai */
+  -webkit-backdrop-filter: blur(8px);
   border-bottom: 1px solid #DCE7E4;
 }
 
@@ -117,21 +116,6 @@
 
 @media screen and (max-width: 1024px) {
 
-  /* .form form button{
-    width: 100%;
-  } */
-  /* .line{
-    width: 100%;
-  }
-  form{
-    width: 100%;
-  }
-  .form form{
-    width: 80%;
-  }
-  .form form input{
-    width: 100%;
-  } */
 }
 
 @media screen and (max-width: 768px) {
@@ -140,20 +124,10 @@
     margin-top: 0px;
   }
 
-  /* .logo-animation-logo{
-    position: relative;
-  } */
   .logo-animation-logo h2 {
     font-size: 25px;
     margin-top: -10px;
-    /* position: relative;
-    top: 5%;
-    left: 20%; */
   }
-
-  /* form{
-    width: 100%;
-  } */
 
   #login-section {
     flex-direction: column;
@@ -198,9 +172,6 @@
   .form form input {
     width: 100%;
   }
-  /* .logo-animation-logo{
-    display: none;
-  } */
   .animation{
     display: none;
   }

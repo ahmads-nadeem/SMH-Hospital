@@ -17,7 +17,7 @@
   font-size: 22px;
   outline: none;
   border: 2px solid #6d64c5;
-  padding: 2px 2px 2px 10px;
+  /* padding: 2px 2px 2px 10px; */
   border-radius: 10px;
   margin: 20px 0px;
 }
@@ -62,7 +62,7 @@
 .calculate {
   background-color: white;
   border-radius: 10px;
-  flex-basis: 40%;
+  /* flex-basis: 40%; */
   height: 80vh;
 }
 
@@ -100,7 +100,7 @@
   margin: 2px auto;
   position: relative;
 }
-.listofselectedmad ul li button {
+/* .listofselectedmad ul li button {
   width: 25px;
   height: 25px;
   position: absolute;
@@ -110,7 +110,7 @@
   border: 1px solid lightblue;
   cursor: pointer;
   border-radius: 100%;
-}
+} */
 
 .listofselectedmad ul li button:hover {
   background-color: red;
@@ -118,11 +118,11 @@
   font-weight: 600;
 }
 
-.calculateheading h2 {
+/* .calculateheading h2 {
   text-align: center;
   margin: 5px 0px;
   padding: 15px;
-}
+} */
 
 .quantityInput {
   width: 50px;

@@ -62,7 +62,7 @@ function AssetPurchase() {
                 sellPrice
             })
         });
-        let responseData = await req.json(); // Response ko read karne ke liye bhi await zaroori hai
+        let responseData = await req.json();
         // console.log(responseData);
     }
 
@@ -108,9 +108,6 @@ function AssetPurchase() {
                             }
                         />
                     </div>
-
-
-
 
                     <div className="input-div">
                         <label htmlFor="">Asset Power/Val Spec</label>
