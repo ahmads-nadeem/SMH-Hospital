@@ -37,7 +37,7 @@ function Register() {
     }
     async function handleRegister(e) {
         e.preventDefault()
-        const api = 'http://localhost:1189/auth/register'
+        const api = `${import.meta.env.VITE_API_BASE_URL}/auth/register`
         const result = await fetch(api, {
             method: 'POST',
             headers: {
