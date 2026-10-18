@@ -105,7 +105,7 @@ export default function PatientDetails({ onSendData }) {
                 roll == 'doctor' ?
                     (
                         <>
-                            <div className="w-[95%] min-h-screen flex items-center justify-center p-4">
+                            <div className="w-[95%] mt-80 mx-auto flex items-center justify-center p-1">
                                 {/* Outer container with purple border wrapper and white background */}
                                 <div className="w-full bg-white rounded-lg shadow-xl border-4 border-transparent p-4 ">
                                     <form className="space-y-6">
