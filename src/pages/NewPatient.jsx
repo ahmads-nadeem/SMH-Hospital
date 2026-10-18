@@ -6,6 +6,7 @@ import PatientDetails from '../components/PatientDetails';
 import DoctorPatients from '../components/DoctorPatients'
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import AncRegisterPrint from '../components/AncRegisterPrint';
 function NewPatient() {
     const roll = useSelector((store) => store.setUser.userRoll)
     const [childData, setChild] = useState({});
@@ -50,14 +51,15 @@ function NewPatient() {
         navigate('/');
     }
     return (
-        status?
+        status?(
         <>
             <div className='relative w-[80%] h-[80vh] rounded-2xl my-2% mx-auto bg-white text-green-600 font-bold font-sans'>
                 <span onClick={()=>reset(false)} className='absolute top-2 right-3 font-bold text-black cursor-pointer hover:text-red-600'>X</span>
                 <h2>Patient Entry Added Successfully</h2>
+                <AncRegisterPrint/>
             </div>
-        </>
-        :
+        </>)
+        :(
         <>
             <Header />
             <PatientDetails onSendData={FromChild} />
@@ -67,7 +69,7 @@ function NewPatient() {
             <div className='w-full'>
                 <button onClick={() => sendToServer()} className='block w-300 bg-blue-600 rounded-2xl text-white font-bold cursor-pointer hover:bg-blue-400 p-2 mx-auto -mt-10 mb-2.5'>Submit</button>
             </div>
-        </>
+        </>)
 
     )
 }
