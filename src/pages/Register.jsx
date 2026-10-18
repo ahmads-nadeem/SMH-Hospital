@@ -6,7 +6,10 @@ import imgtrans from '../assets/transparant img.png'
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { useDispatch } from 'react-redux';
+import { setUserData } from '../redux/userSlice';
 function Register() {
+    const dispatch = useDispatch()
     const navigate = useNavigate()
     const [session, setSession] = useState(null)
     useEffect(() => {
@@ -16,8 +19,10 @@ function Register() {
                 credentials: 'include',
             });
             setSession(req.ok)
+            let data = await req.json()
             if (req.ok) {
                 navigate('/', { replace: true });
+                dispatch(setUserData(data.user))
             }
         }
         check()

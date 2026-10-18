@@ -27,9 +27,6 @@ function Login() {
         }
         check()
     }, [])
-    // if (session === null) {
-    //     return <Loading/>;
-    // }
     if (session) {
         navigate('/');
     }

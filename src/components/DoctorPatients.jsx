@@ -10,7 +10,6 @@ export default function DoctorPatients({onSendData}) {
     const [selectedMedicines, setSelectedMedicines] = useState([]);
 
     useEffect(()=>{
-        // const service = services.filter(obj=> obj.service == selectedOptions)
         const object = {
             medicine:selectedMedicines,
             service: selectedOptions
