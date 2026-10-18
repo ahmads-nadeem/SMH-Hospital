@@ -12,6 +12,7 @@ function NewPatient() {
     const [childData, setChild] = useState({});
     const [childData2, setChild2] = useState({});
     const [status, setStatus] = useState(false);
+    const [response, setRes] = useState({})
     const navigate = useNavigate();
     const FromChild = (data) => {
         setChild(data);
@@ -32,6 +33,7 @@ function NewPatient() {
         const response = await sendBill.json()
         if (response.message == 'success'){
             setStatus(true)
+            setRes(response.report)
         }
         else{
             alert('something went wrong!')
@@ -56,7 +58,7 @@ function NewPatient() {
             <div className='relative w-[80%] h-[80vh] rounded-2xl my-2% mx-auto bg-white text-green-600 font-bold font-sans'>
                 <span onClick={()=>reset(false)} className='absolute top-2 right-3 font-bold text-black cursor-pointer hover:text-red-600'>X</span>
                 <h2>Patient Entry Added Successfully</h2>
-                <AncRegisterPrint/>
+                <AncRegisterPrint data={response}/>
             </div>
         </>)
         :(

@@ -100,12 +100,7 @@ export default function DoctorPatients({onSendData}) {
                                                     <div>{value.category.toUpperCase()}</div>
                                                     <div>{value.productName.toUpperCase()}</div>
                                                     <div>{value.power.toUpperCase()}</div>
-                                                    <span onClick={()=>removeMedicine(value)} className="cursor-pointer hover:text-white">X</span>
-                                                    {/* <div className="w-[150px] flex justify-between">
-                                                        <input className="w-10 bg-white rounded-[8px]" type="text" placeholder="" />
-                                                        <input className="w-10 bg-white rounded-[8px]" type="text" placeholder=""/>
-                                                    </div> */}
-                                                    
+                                                    <span onClick={()=>removeMedicine(value)} className="cursor-pointer hover:text-white">X</span>                                                    
                                                 </li>);
                                         })}
                                     </ul>
