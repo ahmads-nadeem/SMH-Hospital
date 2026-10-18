@@ -32,6 +32,9 @@ function NewPatient() {
         if (response.message == 'success'){
             setStatus(true)
         }
+        else{
+            alert('something went wrong!')
+        }
     }
     async function sendToServer() {
         alert('Are You Sure')
@@ -49,8 +52,8 @@ function NewPatient() {
     return (
         status?
         <>
-            <div className='relative w-[80%] h-[80vh] bg-white text-green-600 font-bold font-sans'>
-                <span onClick={()=>reset(false)} className='absolute top-2 right-3 font-bold text-red-600'>X</span>
+            <div className='relative w-[80%] h-[80vh] rounded-2xl my-2% mx-auto bg-white text-green-600 font-bold font-sans'>
+                <span onClick={()=>reset(false)} className='absolute top-2 right-3 font-bold text-black cursor-pointer hover:text-red-600'>X</span>
                 <h2>Patient Entry Added Successfully</h2>
             </div>
         </>
