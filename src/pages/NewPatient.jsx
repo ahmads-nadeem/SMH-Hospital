@@ -55,9 +55,9 @@ function NewPatient() {
     return (
         status?(
         <>
-            <div className='relative w-[80%] h-[80vh] rounded-2xl my-2% mx-auto bg-white text-green-600 font-bold font-sans'>
+            <div className='block text-center relative w-[80%] h-[80vh] rounded-2xl my-2% mx-auto bg-white text-green-600 font-bold font-sans'>
                 <span onClick={()=>reset(false)} className='absolute top-2 right-3 font-bold text-black cursor-pointer hover:text-red-600'>X</span>
-                <h2>Patient Entry Added Successfully</h2>
+                <h2 className='mt-4 mb-2'>Patient Entry Added Successfully</h2>
                 <AncRegisterPrint data={response}/>
             </div>
         </>)
