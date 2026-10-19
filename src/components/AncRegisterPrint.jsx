@@ -15,7 +15,7 @@ const AncRegisterPrint = ({data}) => {
 
     try {
       // 2. Simple fetch POST request
-      console.log(data.report);
+      console.log('DATA' ,data.report);
       
       const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/doctors/report`, {
         method: 'POST',
