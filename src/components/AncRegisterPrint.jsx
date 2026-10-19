@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AncRegisterPrint = (data) => {
+const AncRegisterPrint = ({data}) => {
 
   const handleOpenPdf = async (data2) => {
     const reportData = {
