@@ -1,24 +1,14 @@
 import React, { useState } from 'react';
-
-const AncRegisterPrint = ({ data }) => {
-
-  console.log(data);
-  
+const AncRegisterPrint = ({ data }) => {  
   const [loading, setLoading] = useState(false);
-
   const handleOpenPdf = async () => {
-    // Data na ho to request hi na bhejein
     if (!data || Object.keys(data).length === 0) {
-      alert('Report data maujood nahi hai.');
+      alert('Report data is not exist!');
       return;
     }
-
-    // Popup blocker se bachne ke liye tab click ke foran baad khol lein
     const newTab = window.open('', '_blank');
-
     try {
       setLoading(true);
-
       const response = await fetch(
         `${import.meta.env.VITE_API_BASE_URL}/doctors/report`,
         {
@@ -31,10 +21,8 @@ const AncRegisterPrint = ({ data }) => {
       if (!response.ok) {
         throw new Error('Server response error');
       }
-
       // Response ko Blob mein convert karein
       const blob = await response.blob();
-
       // Temporary URL banayein aur pehle se khuli tab mein set karein
       const pdfUrl = URL.createObjectURL(blob);
       if (newTab) {
@@ -43,7 +31,6 @@ const AncRegisterPrint = ({ data }) => {
         // Agar browser ne tab block kar di ho
         window.location.href = pdfUrl;
       }
-
       // Memory free karne ke liye thori der baad URL revoke kar dein
       setTimeout(() => URL.revokeObjectURL(pdfUrl), 60000);
     } catch (error) {
