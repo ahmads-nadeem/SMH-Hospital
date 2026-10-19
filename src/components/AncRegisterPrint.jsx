@@ -48,7 +48,7 @@ const AncRegisterPrint = ({data}) => {
     <div style={{ padding: '20px' }}>
       <h2>ANC Register Print</h2>
       <button 
-        onClick={handleOpenPdf(data)}
+        onClick={()=>handleOpenPdf(data)}
         style={{
           padding: '10px 20px',
           backgroundColor: '#007bff',
