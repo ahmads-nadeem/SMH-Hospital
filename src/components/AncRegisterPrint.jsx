@@ -38,15 +38,15 @@ const AncRegisterPrint = (data) => {
 
   const handleOpenPdf = async () => {
     // 1. Aapka Data Object
-    const reportData = {
-      facilityName: "DHQ Hospital",
-      phcRegNo: "PHC-98765",
-      patientName: "Ayesha Bibi",
-      age: "26",
-      bp: "110/70",
-      hb: "11.2"
-      // Jo bhi data aap bhejna chahte hain yahan add karein
-    };
+    // const reportData = {
+    //   facilityName: "DHQ Hospital",
+    //   phcRegNo: "PHC-98765",
+    //   patientName: "Ayesha Bibi",
+    //   age: "26",
+    //   bp: "110/70",
+    //   hb: "11.2"
+    //   // Jo bhi data aap bhejna chahte hain yahan add karein
+    // };
 
     try {
       // 2. Simple fetch POST request
@@ -55,7 +55,7 @@ const AncRegisterPrint = (data) => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data), // Object ko JSON string me convert kiya
+        body: JSON.stringify(data.report), // Object ko JSON string me convert kiya
       });
 
       if (!response.ok) {
