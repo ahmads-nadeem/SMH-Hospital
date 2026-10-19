@@ -33,6 +33,7 @@ function NewPatient() {
         const response = await sendBill.json()
         if (response.message == 'success'){
             setStatus(true)
+            
             setRes(response.report)
         }
         else{
@@ -52,6 +53,8 @@ function NewPatient() {
         setStatus(value)
         navigate('/');
     }
+    console.log(response);
+    
     return (
         status?(
         <>

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
 const AncRegisterPrint = ({ data }) => {
+
+  console.log(data);
+  
   const [loading, setLoading] = useState(false);
 
   const handleOpenPdf = async () => {
