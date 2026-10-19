@@ -18,8 +18,11 @@ function NewPatient() {
     const navigate = useNavigate();
 
     async function sendToServer() {
+        if (!childData.name?.trim() || !childData.phone?.trim()) {
+            alert('Please fill all required fields!');
+            return;
+        }
         if (!window.confirm('Are You Sure?')) return;
-
         setLoading(true);
         try {
             const api = (roll == 'doctor') ? '/doctors/add-patient' : '/users/add-store-patient';
@@ -32,8 +35,6 @@ function NewPatient() {
                 }),
             });
             const result = await res.json();
-            console.log('API:', api, 'RESPONSE:', result);
-
             if (result.message == 'success' && result.report) {
                 setReport(result.report);
             } else {
@@ -46,12 +47,10 @@ function NewPatient() {
             setLoading(false);
         }
     }
-
     function reset() {
         setReport(null);
         navigate('/');
     }
-
     if (report) {
         return (
             <div className='block text-center relative w-[80%] h-[80vh] rounded-2xl my-2% mx-auto bg-white text-green-600 font-bold font-sans'>
@@ -61,7 +60,6 @@ function NewPatient() {
             </div>
         );
     }
-
     return (
         <>
             <Header />
@@ -81,5 +79,4 @@ function NewPatient() {
         </>
     );
 }
-
 export default NewPatient;
