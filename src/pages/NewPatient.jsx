@@ -73,7 +73,7 @@ function NewPatient() {
                 <button
                     onClick={sendToServer}
                     disabled={loading}
-                    className='block w-[90%] bg-blue-600 rounded-2xl text-white font-bold cursor-pointer hover:bg-blue-400 p-2 mx-auto -mt-19 mb-2.5 disabled:opacity-50'
+                    className='block w-[90%] bg-blue-600 rounded-2xl text-white font-bold cursor-pointer hover:bg-blue-400 p-2 mx-auto -mt-18 mb-2.5 disabled:opacity-50'
                 >
                     {loading ? 'Saving...' : 'Submit'}
                 </button>
